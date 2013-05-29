@@ -1,0 +1,24 @@
+{
+    "name": "kindari/laravel-markdown",
+    "description": "Markdown Integration with Laravel's View system",
+    "keywords": ["markdown", "laravel"],
+    "license": "WTFPL",
+    "authors": [
+        {
+            "name": "William Cahill-Manley",
+            "email": "william@cahillmanley.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "illuminate/support": "4.*",
+        "illuminate/view": "4.*",
+		"dflydev/markdown": "dev-master"
+    },
+    "autoload": {
+        "classmap":[
+            "src/"
+        ]
+    },
+    "minimum-stability": "dev"
+}
