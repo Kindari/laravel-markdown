@@ -8,10 +8,13 @@ Add `kindari/laravel-markdown` to `composer.json`.
 
     "kindari/laravel-markdown": "1.0.*"
     
-Run `composer update` to pull down the latest version of Laravel Markdown. Now open up `app/config/app.php` and add the service provider to your `providers` array.
+Run `composer update` to pull down the latest version of Laravel Markdown. Now open up `app/config/app.php` and add the service provider to your `providers` array, *after* the ViewServiceProvider.
 
     'providers' => array(
-		'Kindari\LaravelMarkdown\MarkdownServiceProvider',
+    	...
+    		'Illuminate\View\ViewServiceProvider',
+    		'Kindari\LaravelMarkdown\MarkdownServiceProvider',
+		...
     )
 
 ## Usage
