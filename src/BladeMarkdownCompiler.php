@@ -32,11 +32,14 @@ class BladeMarkdownCompiler extends BladeCompiler {
 		// Capture the content within the section.
 		preg_match($pattern, $value, $matches);
 
-		// Transform the content from markdown.
-		$parsed = $this->parser->transform($matches[3]);
+		if (! empty($matches))
+		{
+			// Transform the content from markdown.
+			$parsed = $this->parser->transform($matches[3]);
 
-		// Pass the content back into the value.
-		$value = preg_replace($pattern, '$1'.$parsed.'$4', $value);
+			// Pass the content back into the value.
+			$value = preg_replace($pattern, '$1'.$parsed.'$4', $value);
+		}
 
 		$pattern = $this->createMatcher('section');
 
