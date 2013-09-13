@@ -24,7 +24,7 @@ class MarkdownServiceProvider extends ServiceProvider {
 			return new PhpMarkdownEngine($app['markdown']);
 		});
 
-		$view->addExtension('md.blade.php', 'blade-markdown', function() use ($app, $view) {
+		$view->addExtension('md.blade.php', 'blade-markdown', function() use ($app) {
 			$cache = $app['path.storage'].'/views';
 			$compiler = new BladeMarkdownCompiler($app['files'], $cache, $app['markdown']);
 			return new CompilerEngine($compiler);
