@@ -27,7 +27,7 @@ class BladeMarkdownCompiler extends BladeCompiler {
 	 */
 	protected function compileSectionStart($value)
 	{
-		$pattern = '/(@section\((.+)\))(.+)(@stop)/sm';
+		$pattern = '/(@section\(([^)]+)\))(.+)(@stop)/sm';
 
 		// Capture the content within the section.
 		preg_match($pattern, $value, $matches);
