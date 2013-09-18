@@ -14,7 +14,7 @@ class MarkdownServiceProvider extends ServiceProvider {
 	{
 		list($app, $view) = array($this->app, $this->app['view']);
 
-		$app->singleton('markdown', 'dflydev\markdown\MarkdownParser');
+		$app->singleton('markdown', 'dflydev\markdown\MarkdownGFMParser');
 
 		$view->addExtension('md', 'markdown', function() use ($app) {
 			return new MarkdownEngine($app['markdown']);
