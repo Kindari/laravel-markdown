@@ -9,11 +9,17 @@
             "email": "william@cahillmanley.com"
         }
     ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/lsjroberts/dfyldev-markdown"
+        }
+    ],
     "require": {
         "php": ">=5.3.0",
         "illuminate/support": "4.*",
         "illuminate/view": "4.*",
-		"dflydev/markdown": "dev-master"
+		"dflydev/markdown": "dev-gfm"
     },
     "autoload": {
         "classmap":[
