@@ -12,7 +12,7 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/lsjroberts/markdown"
+            "url": "https://github.com/lsjroberts/dfyldev-markdown"
         }
     ],
     "require": {
