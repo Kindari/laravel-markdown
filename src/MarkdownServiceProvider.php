@@ -13,20 +13,18 @@ class MarkdownServiceProvider extends ServiceProvider {
 	{
 		list($app, $view) = array($this->app, $this->app['view']);
 
-		$app->singleton('markdown', 'dflydev\markdown\MarkdownParser');
-
 		$view->addExtension('md', 'markdown', function() use ($app) {
-			return new MarkdownEngine($app['markdown']);
+			return new MarkdownEngine($app['Michelf\Markdown']);
 		});
 
 		$view->addExtension('md.php', 'php-markdown', function() use ($app) {
-			return new PhpMarkdownEngine($app['markdown']);
+			return new PhpMarkdownEngine($app['Michelf\Markdown']);
 		});
 
 		$view->addExtension('md.blade.php', 'blade-markdown', function() use ($app, $view) {
 			$resolver = $view->getEngineResolver();
 			$compiler = $resolver->resolve('blade')->getCompiler();
-			return new BladeMarkdownEngine($compiler, $app['markdown']);
+			return new BladeMarkdownEngine($compiler, $app['Michelf\Markdown']);
 		});
 
 	}
